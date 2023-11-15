@@ -1,0 +1,1 @@
+{"mappings":"ACAA","sources":["index.331fc2e7.css","src/pages/presentacion/index.css"],"sourcesContent":[".jugar__parrafo {\n  text-align: center;\n  font-size: 40px;\n}\n\n/*# sourceMappingURL=index.331fc2e7.css.map */\n",".jugar__parrafo {\r\n  font-size: 40px;\r\n  text-align: center;\r\n}\r\n"],"names":[],"version":3,"file":"index.331fc2e7.css.map"}
