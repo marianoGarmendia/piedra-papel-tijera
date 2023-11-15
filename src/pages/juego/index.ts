@@ -22,29 +22,105 @@ export function gamePage() {
     <hands-container size="grande" class="hands-container"></hands-container>
     </div>
     `;
-
     const handsContainer = div.querySelector(".hands-container");
-    handsContainer?.addEventListener("click", (e) => {
-      const cs = state.getState();
 
-      const target = e.target as any;
-      const computedMove = state.computerPlay();
+    let target;
+    let computedMove;
 
-      state.setMove(target.id, computedMove);
-      myHandSelect(target.id, computedMove);
+    setTimeout(() => {
+      const images =
+        document.querySelector(".hands-container")?.children[0].children;
+      const arrImages = Array.prototype.slice.call(images);
+      const container = handsContainer as any;
+
+      computedMove = state.computerPlay();
       setTimeout(() => {
-        if (cs.currentGame.ganador == "") {
-          return game(
-            cs.currentGame.myPlay,
-            cs.currentGame.computerPlay,
-            cs.currentGame.playTime
-          );
-        } else {
-          cs.historyGame.push({ ...cs.currentGame });
-          state.setState(cs);
-          goTo("endgame");
+        container.style.pointerEvents = "auto";
+      }, 3000);
+
+      if (handsContainer?.getAttribute("select")) {
+        console.log("fui sleccionado");
+        const cs = state.getState();
+        computerSelect(computedMove);
+
+        state.setMove(target.id, computedMove);
+        setTimeout(() => {
+          if (cs.currentGame.ganador == "") {
+            arrImages.forEach((img) => {
+              img.style.transform = "";
+              img.style.transition = "";
+              img.style.opacity = "";
+            });
+            container.style.pointerEvents = "auto";
+
+            return game(
+              cs.currentGame.myPlay,
+              cs.currentGame.computerPlay,
+              cs.currentGame.playTime
+            );
+          } else {
+            cs.historyGame.push({ ...cs.currentGame });
+            state.setState(cs);
+            goTo("endgame");
+          }
+        }, 3000);
+      } else {
+        console.log("no fui seleccionado");
+
+        const container = handsContainer as any;
+        container.style.pointerEvents = "none";
+
+        target = "piedra";
+        computerSelect(computedMove);
+
+        if (target == "piedra" || "papel" || "tijera") {
+          const images =
+            document.querySelector(".hands-container")?.children[0].children;
+          const arrImages = Array.prototype.slice.call(images);
+          state.setMove(target, computedMove);
+          console.log(target + computedMove);
+
+          myHandSelect(target, arrImages);
         }
-      }, 6000);
+        const cs = state.getState();
+
+        setTimeout(() => {
+          if (cs.currentGame.ganador == "") {
+            arrImages.forEach((img) => {
+              img.style.transform = "";
+              img.style.transition = "";
+              img.style.opacity = "";
+            });
+            container.style.pointerEvents = "auto";
+
+            return game(
+              cs.currentGame.myPlay,
+              cs.currentGame.computerPlay,
+              cs.currentGame.playTime
+            );
+          } else {
+            cs.historyGame.push({ ...cs.currentGame });
+            state.setState(cs);
+            goTo("endgame");
+          }
+        }, 3000);
+      }
+    }, 3000);
+
+    handsContainer?.addEventListener("click", (e) => {
+      handsContainer.setAttribute("select", "true");
+
+      const container = handsContainer as any;
+      container.style.pointerEvents = "none";
+
+      target = e.target as any;
+
+      if (target == "piedra" || "papel" || "tijera") {
+        const images =
+          document.querySelector(".hands-container")?.children[0].children;
+        const arrImages = Array.prototype.slice.call(images);
+        myHandSelect(target.id, arrImages);
+      }
     });
     return div;
   };
@@ -78,16 +154,16 @@ export function gamePage() {
   return game(0, 0, 0);
 }
 
-export function myHandSelect(miMove: play, computedMove: play) {
-  const images =
-    document.querySelector(".hands-container")?.children[0].children;
-  const arrImages = Array.prototype.slice.call(images);
-  const handsContainer = document.querySelector(".hands-container");
-  const container = handsContainer as any;
-  container.style.pointerEvents = "none";
-  setTimeout(() => {
-    container.style.pointerEvents = "auto";
-  }, 6000);
+export function myHandSelect(miMove: play, arrImages) {
+  // const images =
+  //   document.querySelector(".hands-container")?.children[0].children;
+  // const arrImages = Array.prototype.slice.call(images);
+  // const handsContainer = document.querySelector(".hands-container");
+  // const container = handsContainer as any;
+  // container.style.pointerEvents = "none";
+  // setTimeout(() => {
+  //   container.style.pointerEvents = "auto";
+  // }, 6000);
   if (miMove == "papel") {
     arrImages[0].style.transform = "translate(125px,-130px)";
     arrImages[0].style.transition = "transform 0.5s";
@@ -120,16 +196,17 @@ export function myHandSelect(miMove: play, computedMove: play) {
     arrImages[0].style.transition = "transform 0.5s";
     arrImages[0].style.opacity = "0.5";
   }
-  setTimeout(() => {
-    arrImages.forEach((img) => {
-      img.style.transform = "";
-      img.style.transition = "";
-      img.style.opacity = "";
-    });
-  }, 6000);
-  setTimeout(() => {
-    computerSelect(computedMove);
-  }, 3000);
+  // setTimeout(() => {
+  //   arrImages.forEach((img) => {
+  //     img.style.transform = "";
+  //     img.style.transition = "";
+  //     img.style.opacity = "";
+  //   });
+  // }, 3000);
+  // setTimeout(() => {
+  //   computerSelect(computedMove);
+  // }, 3000);
+  // computerSelect(computedMove);
 }
 
 function computerSelect(computedMove) {

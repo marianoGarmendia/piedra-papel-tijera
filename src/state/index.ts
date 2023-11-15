@@ -7,6 +7,7 @@ export const state = {
       myPlay: 0,
       playTime: 0,
       ganador: "",
+      choice: false,
     },
 
     historyGame: [],
@@ -52,61 +53,63 @@ export const state = {
     }
   },
   setMove(myMove: play, computedMove: play) {
+    const currentState = this.getState();
+    // currentState.choice = true;
+
     if (myMove == "papel" && computedMove == "piedra") {
-      const currentState = this.getState();
       currentState.currentGame.myPlay += 1;
       currentState.currentGame.playTime += 1;
       this.setState(currentState);
     }
     if (myMove == "papel" && computedMove == "tijera") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.computerPlay += 1;
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);
     }
     if (myMove == "papel" && computedMove == "papel") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);
     }
     if (myMove == "piedra" && computedMove == "papel") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.computerPlay += 1;
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);
     }
     if (myMove == "piedra" && computedMove == "tijera") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.myPlay += 1;
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);
     }
     if (myMove == "piedra" && computedMove == "piedra") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);
     }
     if (myMove == "tijera" && computedMove == "papel") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.myPlay += 1;
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);
     }
     if (myMove == "tijera" && computedMove == "piedra") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.computerPlay += 1;
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);
     }
     if (myMove == "tijera" && computedMove == "tijera") {
-      const currentState = this.getState();
+      // const currentState = this.getState();
       currentState.currentGame.playTime += 1;
 
       this.setState(currentState);

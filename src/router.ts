@@ -58,9 +58,12 @@ export function goTo(path) {
     const completePath = BASE_PATH + path;
     history.pushState({}, "", completePath);
     handleRoute(completePath);
-  } else {
+  } else if (path == "/inicio") {
     history.pushState({}, "", path);
     handleRoute(path);
+  } else {
+    history.pushState({}, "", "/" + path);
+    handleRoute("/" + path);
   }
 }
 
@@ -68,6 +71,8 @@ export function goTo(path) {
 export function initRouter() {
   if (location.pathname == BASE_PATH) {
     goTo("inicio");
+  } else if (location.pathname == "/") {
+    goTo("/inicio");
   } else {
     handleRoute(location.pathname);
   }
