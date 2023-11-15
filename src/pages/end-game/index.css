@@ -1,0 +1,28 @@
+.end-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-end-game-winner {
+  background-color: rgb(8, 95, 8);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; */
+}
+
+.container-end-game-looser {
+  background-color: rgba(137, 73, 73, 0.9);
+}
+.container-buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}

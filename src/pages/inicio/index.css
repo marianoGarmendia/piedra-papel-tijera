@@ -1,0 +1,18 @@
+.init-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  row-gap: 75px;
+  width: 90%;
+  margin: 0 auto;
+  /* background-image: require("url:./img/fondo.png"); */
+  /* background-image: url("../../img/fondo.png"); */
+}
+
+.init-page__title {
+  color: #009048;
+  font-size: 80px;
+  margin: 0;
+}

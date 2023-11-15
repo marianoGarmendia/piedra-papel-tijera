@@ -1,0 +1,22 @@
+.game-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* row-gap: 75px; */
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  /* background-image: require("url:./img/fondo.png"); */
+}
+
+.container-middle {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  /* position: relative; */
+}
+
+.tanteador {
+  position: absolute;
+}
