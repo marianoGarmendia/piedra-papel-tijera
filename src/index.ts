@@ -11,7 +11,7 @@ import { state } from "./state";
 
 (function () {
   state.initState();
-  initRouter();
   handsEl();
   temporizadorEl();
+  initRouter();
 })();

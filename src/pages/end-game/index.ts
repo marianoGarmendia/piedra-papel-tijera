@@ -40,7 +40,7 @@ export function endPage(goTo) {
       currentState.currentGame.ganador = "";
 
       state.setState(currentState);
-      goTo("/game");
+      goTo("game");
     });
 
     const btnInicio = div.querySelector(".btn-inicio");
@@ -54,7 +54,7 @@ export function endPage(goTo) {
       currentState.historyGame = [];
 
       state.setState(currentState);
-      goTo("/inicio");
+      goTo("inicio");
     });
 
     return div;

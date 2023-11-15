@@ -3,7 +3,7 @@ import { initPage } from "./pages/inicio";
 import { jugarPage } from "./pages/presentacion";
 import { endPage } from "./pages/end-game";
 const root = document.querySelector(".root");
-const BASE_PATH = "/piedra-papel-tijera";
+const BASE_PATH = "/piedra-papel-tijera/";
 
 const routes = [
   {
@@ -26,7 +26,8 @@ const routes = [
 
 function handleRoute(path) {
   if (isGithubPages()) {
-    const newRoute = path.replace(BASE_PATH, "");
+    const newRoute = path.replace(BASE_PATH, "/");
+
     for (const route of routes) {
       if (route.path.test(newRoute)) {
         const page = route.handle(goTo);
@@ -65,8 +66,8 @@ export function goTo(path) {
 
 // TENER EN CUENTA EL RUTEO DESDE GITHUB PAGES - VER INSTRUCCIONES EN APX-CARRERA
 export function initRouter() {
-  if (location.pathname == "/") {
-    goTo("/inicio");
+  if (location.pathname == BASE_PATH) {
+    goTo("inicio");
   } else {
     handleRoute(location.pathname);
   }

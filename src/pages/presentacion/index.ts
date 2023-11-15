@@ -11,7 +11,7 @@ export function jugarPage(goTo) {
 
   const jugarBtnEl = div.querySelector(".btn-jugar");
   jugarBtnEl?.addEventListener("click", () => {
-    goTo("/game");
+    goTo("game");
   });
 
   return div;

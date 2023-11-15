@@ -12,7 +12,7 @@ export function initPage(goTo) {
 
   const empezarBtnEl = div.querySelector(".btn-empezar");
   empezarBtnEl?.addEventListener("click", () => {
-    goTo("/jugar");
+    goTo("jugar");
   });
   return div;
 }

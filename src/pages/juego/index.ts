@@ -42,7 +42,7 @@ export function gamePage() {
         } else {
           cs.historyGame.push({ ...cs.currentGame });
           state.setState(cs);
-          goTo("/endgame");
+          goTo("endgame");
         }
       }, 6000);
     });

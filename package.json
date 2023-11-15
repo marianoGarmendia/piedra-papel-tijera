@@ -5,8 +5,9 @@
   "description": "",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --dist-dir build  --public-url /piedra-papel-tijera",
-    "deploy": "gh-pages -d build"
+    "build": "parcel build --dist-dir build --public-url /piedra-papel-tijera",
+    "deploy": "gh-pages -d build",
+    "build & deploy": "parcel build --dist-dir build -public-url /piedra-papel-tijera && gh-pages -d build "
   },
   "keywords": [],
   "author": "",
