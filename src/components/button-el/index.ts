@@ -19,10 +19,10 @@ export class ButtonEl extends HTMLElement {
         font-family: "Odibee Sans";
         background-color: #006CFC;
         color: white;
-        font-size: 45px;
+        font-size: 27px;
         letter-spacing: 2.25px;
-        width: 322px;
-        height: 87px;
+        width: 290px;
+        height: 57px;
     }
     `;
     shadow.appendChild(button);

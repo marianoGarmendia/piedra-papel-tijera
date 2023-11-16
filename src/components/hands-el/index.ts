@@ -28,12 +28,21 @@ export function handsEl() {
                 // overflow: hidden;
              }
 
+             img:hover{
+              cursor: pointer;
+             }
+             
+
              .computer{
                 transform: translate(0,0px) rotate(180deg); 
              }
 
              
-    
+             @media(min-width: 960px){
+              img{
+                height: 190px;
+              }
+             }
             //  img{
             //     transform: translate(0, 30px);
             //  }

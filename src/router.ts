@@ -78,7 +78,7 @@ export function initRouter() {
   }
 }
 
-function isGithubPages() {
+export function isGithubPages() {
   return location.host.includes("github.io");
 }
 

@@ -155,17 +155,8 @@ export function gamePage() {
 }
 
 export function myHandSelect(miMove: play, arrImages) {
-  // const images =
-  //   document.querySelector(".hands-container")?.children[0].children;
-  // const arrImages = Array.prototype.slice.call(images);
-  // const handsContainer = document.querySelector(".hands-container");
-  // const container = handsContainer as any;
-  // container.style.pointerEvents = "none";
-  // setTimeout(() => {
-  //   container.style.pointerEvents = "auto";
-  // }, 6000);
   if (miMove == "papel") {
-    arrImages[0].style.transform = "translate(125px,-130px)";
+    arrImages[0].style.transform = "translate(125px,-80px)";
     arrImages[0].style.transition = "transform 0.5s";
 
     arrImages[1].style.transform = "translate(-135px,80px)";
@@ -179,14 +170,14 @@ export function myHandSelect(miMove: play, arrImages) {
     arrImages[0].style.transform = "translate(0,80px)";
     arrImages[0].style.transition = "transform 0.5s";
     arrImages[0].style.opacity = "0.5";
-    arrImages[1].style.transform = "translate(0,-130px)";
+    arrImages[1].style.transform = "translate(0,-80px)";
     arrImages[1].style.transition = "transform 0.5s";
 
     arrImages[2].style.transform = "translate(0,80px)";
     arrImages[2].style.transition = "transform 0.5s";
     arrImages[2].style.opacity = "0.5";
   } else if (miMove == "tijera") {
-    arrImages[2].style.transform = "translate(-125px,-130px)";
+    arrImages[2].style.transform = "translate(-125px,-80px)";
     arrImages[2].style.transition = "transform 0.5s";
     arrImages[1].style.transform = "translate(125px,80px)";
     arrImages[1].style.transition = "transform 0.5s";
@@ -214,7 +205,7 @@ function computerSelect(computedMove) {
   const arrImages = Array.prototype.slice.call(images);
 
   if (computedMove == "papel") {
-    arrImages[0].style.transform = "translate(125px,-170px)";
+    arrImages[0].style.transform = "translate(125px,-100px)";
     arrImages[0].style.transition = "transform 0.5s";
     // arrImages[0].style.opacity = "0.5";
 
@@ -225,7 +216,7 @@ function computerSelect(computedMove) {
     arrImages[2].style.transform = "translate(0,70px)";
     arrImages[2].style.opacity = "0.5";
   } else if (computedMove == "piedra") {
-    arrImages[1].style.transform = "translate(0,-170px)";
+    arrImages[1].style.transform = "translate(0,-100px)";
     arrImages[1].style.transition = "transform 0.5s";
 
     arrImages[0].style.transform = "translate(0,70px)";
@@ -236,7 +227,7 @@ function computerSelect(computedMove) {
     arrImages[2].style.opacity = "0.5";
     arrImages[2].style.transition = "transform 0.5s";
   } else if (computedMove == "tijera") {
-    arrImages[2].style.transform = "translate(-125px,-170px)";
+    arrImages[2].style.transform = "translate(-125px,-100px)";
     arrImages[2].style.transition = "transform 0.5s";
 
     arrImages[0].style.transform = "translate(0,70px)";

@@ -26,6 +26,7 @@ export class ResultadoEl extends HTMLElement {
             display: flex;
             justify-content: center;
             align-items: center;
+            // height: 150px;
         }
 
         .container > p {
